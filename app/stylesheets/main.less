@@ -96,8 +96,10 @@ header {
     padding-top: 120px;
 
     .menu-block {
+        margin-top: 40px;
         .menu-title {
             text-transform: uppercase;
+            // text-align: center;
         }
 
         ul {
@@ -114,6 +116,7 @@ header {
                     display: block;
                     color: black;
                     border-radius: 12px;
+                    // text-align: center;
                 }
             }
         }
@@ -125,7 +128,35 @@ header {
 }
 
 footer {
+    height: 30px;
+    background: white;
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    border-top: 1px #aaa solid;
+    z-index: 3;
 
+    .copy {
+        width: 190px;
+        text-align: center;
+        float: left;
+    }
+
+    .revision {
+        width: 190px;
+        text-align: center;
+        float: right;
+    }
+
+    .update {
+        width: 190px;
+        float: right;
+        height: 30px;
+        text-align: center;
+    }
 }
 
 a {
