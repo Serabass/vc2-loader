@@ -9,10 +9,13 @@
     "icon": "icon.png",
     "show": true,
     "toolbar": true,
-    "width": 1000,
-    "height": 600,
-    "min_width": 800,
-    "min_height": 400,
+    "frame": false,
+    "width": 1200,
+    "height": 675,
+    "min_width": 1200,
+    "min_height": 675,
+    "max_width": 1200,
+    "max_height": 675,
     "position": "center"
   },
   "dependencies": {
