@@ -1,3 +1,5 @@
+@header-size: 92px;
+
 div {
     transition: box-shadow 300ms ease-out;
 }
@@ -13,60 +15,96 @@ html, body {
     padding: 0;
 }
 
+* {
+    -webkit-user-select: none;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Helvetica, sans-serif;
     background-image: url('../../app/img/bg.png');
+
+    .overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.6);
+        z-index: -99;
+    }
+}
+
+header, .side, footer {
+    background: rgba(255, 255, 255, 0.9);
 }
 
 header {
-    height: 30px;
-    background: white;
+    height: @header-size;
     display: block;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    padding: 30px;
     border-bottom: 1px #aaa solid;
     z-index: 3;
 
+    .drag {
+        display: none;
+        -webkit-app-region: drag;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255, 0, 0, 0.4);
+        transition: height 100ms ease-out;
+        height: 0;
+        z-index: 99;
+    }
+
+    &:hover .drag {
+        height: 20px;
+    }
+
     .logo {
         width: 100px;
-        height: 100px;
+        height: 40px;
         float: left;
     }
 
     .title {
         width: 141px;
-        height: 34px;
+        height: @header-size;
         float: left;
         font-size: 29px;
+        line-height: @header-size;
     }
 
     .main-menu {
-        width: 610px;
+        width: 850px;
         float: left;
-        line-height: 50px;
+        line-height: @header-size;
+        height: @header-size;
         ul {
             display: block;
             margin: 0 auto;
-            width: 530px;
-            height: 50px;
+            width: 720px;
+            height: @header-size;
             padding: 0;
+            line-height: @header-size;
             li {
                 display: block;
                 float: left;
-                width: 130px;
+                width: 180px;
                 text-align: center;
                 font-size: 25px;
-                line-height: 50px;
+                line-height: @header-size;
+                height: @header-size;
 
                 &:hover a, &.active a {
-                    border-top: 1px solid black;
-                    margin-top: -1px;
+                    background: rgba(0, 0, 0, 0.1);
                 }
 
 
@@ -85,15 +123,13 @@ header {
 
 .side {
     position: fixed;
-    top: 0;
-    bottom: 0;
-    background: white;
+    top: 90px;
+    bottom: 90px;
     width: 230px;
     left: 0;
     z-index: 1;
     box-shadow: 2px 0 6px #aaa;
     padding-left: 40px;
-    padding-top: 120px;
 
     .menu-block {
         margin-top: 40px;
@@ -104,6 +140,7 @@ header {
 
         ul {
             list-style: none;
+            padding-left: 0;
             li {
                 width: 170px;
                 height: 32px;
@@ -124,12 +161,16 @@ header {
 }
 
 .main {
-
+    width: 870px;
+    position: absolute;
+    right: 0;
+    top: @header-size;
+    height: 421px;
+    padding: 16px 30px;
 }
 
 footer {
     height: 30px;
-    background: white;
     display: block;
     position: fixed;
     bottom: 0;

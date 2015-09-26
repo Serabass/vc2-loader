@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html ng-app="loader">
 <head>
     <meta charset="utf-8">
     <title>NW Boilerplate</title>
@@ -26,17 +26,14 @@
         }());
     </script>
 
-    <!-- Load real app code -->
-    <script src="vendor/require.js"></script>
-    <script>
-        requirejs(['app'], function (app) {});
-    </script>
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../bower_components/angular/angular.min.js"></script>
+    <!-- Load real app code -->
+    <script src="main.js"></script>
 </head>
 <body>
-
+    <div class="overlay"></div>
     <header>
+        <div class="drag"></div>
         <div class="logo"></div>
         <div class="title">
             Vice City 2
@@ -44,16 +41,16 @@
         <div class="main-menu">
             <ul>
                 <li>
-                    <a href="#">News</a>
-                </li>
-                <li class="active">
-                    <a href="#">Downloads</a>
+                    <a href="#/news">News</a>
                 </li>
                 <li>
-                    <a href="#">Contacts</a>
+                    <a href="#/downloads">Downloads</a>
                 </li>
                 <li>
-                    <a href="#">Settings</a>
+                    <a href="#/contacts">Contacts</a>
+                </li>
+                <li>
+                    <a href="#/settings">Settings</a>
                 </li>
             </ul>
         </div>
@@ -62,48 +59,20 @@
     </header>
 
     <div class="side">
-        <div class="menu-block">
+        <div class="menu-block" ng-repeat="(index, block) in sidebar">
             <div class="menu-title">
-                General
+                {{ block.title }}
             </div>
             <ul>
-                <li>
-                    <a href="#">New Releases</a>
-                </li>
-                <li>
-                    <a href="#">Work In Progress</a>
-                </li>
-                <li>
-                    <a href="#">Most Popular</a>
-                </li>
-            </ul>
-        </div>
-        <div class="menu-block">
-            <div class="menu-title">
-                Categories
-            </div>
-            <ul>
-                <li>
-                    <a href="#">Cars</a>
-                </li>
-                <li class="active">
-                    <a href="#">Map</a>
-                </li>
-                <li>
-                    <a href="#">Textures</a>
-                </li>
-                <li>
-                    <a href="#">Guns</a>
-                </li>
-                <li>
-                    <a href="#">Music</a>
+                <li ng-repeat="(index, item) in block.items">
+                    <a href="#/{{ item.url }}">{{ item.title }}</a>
                 </li>
             </ul>
         </div>
     </div>
 
     <div class="main">
-
+        <div ng-view></div>
     </div>
 
     <footer>
@@ -124,5 +93,19 @@
 
     </footer>
 
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../bower_components/angular-route/angular-route.min.js"></script>
+
+    <!-- Load real app code -->
+    <script src="app.js"></script>
+    <script src="controllers/news.js"></script>
+    <script src="controllers/dl.js"></script>
+    <script src="controllers/settings.js"></script>
+    <script src="controllers/contacts.js"></script>
+    <script src="controllers/general/releases.js"></script>
+    <script src="controllers/general/popular.js"></script>
+    <script src="controllers/general/work.js"></script>
+    <script src="controllers/category/index.js"></script>
+    <script src="run.js"></script>
 </body>
 </html>

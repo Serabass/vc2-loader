@@ -1,15 +1,44 @@
-// -----------------------------------------------------
-// Here is the starting point for your own code.
-// All stuff below is just to show you how it works.
-// -----------------------------------------------------
+var app = angular.module('loader', [
+        'ngRoute'
+    ])
+    .config(function ($routeProvider) {
+        $routeProvider.when('/news', {
+                controller: 'NewsCtrl',
+                templateUrl: 'templates/news.html'
+            })
+            .when('/downloads', {
+                controller: 'DlCtrl',
+                templateUrl: 'templates/dl.html'
+            })
+            .when('/contacts', {
+                controller: 'ContactsCtrl',
+                templateUrl: 'templates/contacts.html'
+            })
+            .when('/settings', {
+                controller: 'ContactsCtrl',
+                templateUrl: 'templates/settings.html'
+            })
 
-// Browser modules are imported through new ES6 syntax.
-import { greet } from './hello_world/hello_world';
 
-// Node modules are required the same way as always.
-var os = require('os');
 
-// window.env contains data from config/env_XXX.json file.
-var envName = window.env.name;
+            .when('/general/new-releases', {
+                controller: 'ReleasesCtrl',
+                templateUrl: 'templates/general/new-releases.html'
+            })
+            .when('/general/work', {
+                controller: 'WorkCtrl',
+                templateUrl: 'templates/general/work.html'
+            })
+            .when('/general/popular', {
+                controller: 'PopularCtrl',
+                templateUrl: 'templates/general/popular.html'
+            })
 
-var nwGui = require('nw.gui');
+
+
+            .when('/category/:category', {
+                controller: 'CategoryCtrl',
+                templateUrl: 'templates/category/index.html'
+            })
+        ;
+    });
