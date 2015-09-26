@@ -53,7 +53,6 @@ header {
 
     .drag {
         display: none;
-        -webkit-app-region: drag;
         width: 100%;
         position: absolute;
         top: 0;
@@ -80,6 +79,8 @@ header {
         float: left;
         font-size: 29px;
         line-height: @header-size;
+        -webkit-app-region: drag;
+        cursor: all-scroll;
     }
 
     .main-menu {
