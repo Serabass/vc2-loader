@@ -16,7 +16,8 @@
     "min_height": 675,
     "max_width": 1200,
     "max_height": 675,
-    "position": "center"
+    "position": "center",
+    "transparent": true
   },
   "dependencies": {
     "fs-jetpack": "^0.6.4"
