@@ -8,6 +8,11 @@ div:hover {
     // background: rgba(0, 0, 0, 0.3);
 }
 
+a.btn {
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -24,7 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: Helvetica, sans-serif;
-    background-image: url('../../app/img/bg.png');
+    background-image: url('../img/bg.png');
 
     .overlay {
         position: absolute;
@@ -130,12 +135,12 @@ header {
     left: 0;
     z-index: 1;
     box-shadow: 2px 0 6px #aaa;
-    padding-left: 40px;
 
     .menu-block {
-        margin-top: 40px;
+        margin-top: 20px;
         .menu-title {
             text-transform: uppercase;
+            padding-left: 40px;
             // text-align: center;
         }
 
@@ -143,7 +148,6 @@ header {
             list-style: none;
             padding-left: 0;
             li {
-                width: 170px;
                 height: 32px;
                 line-height: 20px;
                 &:hover a, &.active a {
@@ -153,8 +157,14 @@ header {
                     padding: 6px;
                     display: block;
                     color: black;
-                    border-radius: 12px;
+                    padding-left: 40px;
                     // text-align: center;
+                    transition: padding-left 100ms ease-out, color 100ms ease-out;
+                }
+
+                &.active a {
+                    padding-left: 45px;
+                    font-weight: bold;
                 }
             }
         }
@@ -162,7 +172,7 @@ header {
 }
 
 .main {
-    width: 870px;
+    width: 910px;
     position: absolute;
     right: 0;
     top: @header-size;
@@ -211,4 +221,13 @@ a {
 
 .subtitle {
     color: gray;
+}
+
+
+a.btn.update {
+    float: right;
+    border: 2px solid red;
+    color: red;
+    height: 42px;
+    line-height: 42px;
 }

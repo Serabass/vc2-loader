@@ -5,5 +5,5 @@ Thumbs.db
 /build/
 /releases/
 /tmp/
-/.idea
-/.idea/**
+.idea
+.idea/**

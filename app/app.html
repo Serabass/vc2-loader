@@ -34,23 +34,14 @@
     <div class="overlay"></div>
     <header>
         <div class="drag"></div>
-        <div class="logo"></div>
+        <div class="logo" title="Drag me"></div>
         <div class="title">
             Vice City 2
         </div>
         <div class="main-menu">
             <ul>
-                <li>
-                    <a href="#/news">News</a>
-                </li>
-                <li>
-                    <a href="#/downloads">Downloads</a>
-                </li>
-                <li>
-                    <a href="#/contacts">Contacts</a>
-                </li>
-                <li>
-                    <a href="#/settings">Settings</a>
+                <li ng-repeat="(index, item) in topLinks" ng-class="{'active': active === item}">
+                    <a href="#/{{ item.url }}" ng-click="setActive(item)">{{ item.title }}</a>
                 </li>
             </ul>
         </div>
@@ -64,8 +55,10 @@
                 {{ block.title }}
             </div>
             <ul>
-                <li ng-repeat="(index, item) in block.items">
-                    <a href="#/{{ item.url }}">{{ item.title }}</a>
+                <li ng-repeat="(index, item) in block.items" ng-class="{'active': active === item}">
+                    <a href="#/{{ item.url }}" ng-click="setActive(item)">
+                        {{ item.title }}
+                    </a>
                 </li>
             </ul>
         </div>
@@ -83,9 +76,7 @@
             </div>
         </div>
 
-        <div class="update">
-            <a href="#">Update</a>
-        </div>
+        <a href="#" class="btn update">Update</a>
 
         <div class="revision">
             Your revision is 0.01 (new 0.02)

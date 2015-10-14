@@ -1,9 +1,9 @@
 {
-  "name": "nw-boilerplate",
-  "productName": "NW Boilerplate",
-  "description": "Starter for NW.js application. Out of the box ready for serious stuff.",
+  "name": "vc2-loader",
+  "productName": "Vice City 2 Loader",
+  "description": "",
   "version": "0.1.0",
-  "author": "Mr Gumby <gumby@sillywalks.com>",
+  "author": "Serabass",
   "main": "app.html",
   "window": {
     "icon": "icon.png",

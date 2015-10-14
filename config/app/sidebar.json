@@ -1,0 +1,44 @@
+[
+  {
+    "title": "General",
+    "items": [
+      {
+        "title": "New Releases",
+        "url": "general/new-releases"
+      },
+      {
+        "title": "Work In Progress",
+        "url": "general/work"
+      },
+      {
+        "title": "Most Popular",
+        "url": "general/popular"
+      }
+    ]
+  },
+  {
+    "title": "Categories",
+    "items": [
+      {
+        "title": "Cars",
+        "url": "category/cars"
+      },
+      {
+        "title": "Map",
+        "url": "category/map"
+      },
+      {
+        "title": "Textures",
+        "url": "category/txd"
+      },
+      {
+        "title": "Guns",
+        "url": "category/guns"
+      },
+      {
+        "title": "Music",
+        "url": "category/music"
+      }
+    ]
+  }
+]

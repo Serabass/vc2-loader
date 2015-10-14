@@ -5,71 +5,13 @@ angular.module('loader')
             return $location.path();
         };
 
-        $rootScope.topLinks = [
-            {
-                title: 'News',
-                url: 'news'
-            },
-            {
-                title: 'Downloads',
-                url: 'dl'
-            },
-            {
-                title: 'Contacts',
-                url: 'contacts'
-            },
-            {
-                title: 'Settings',
-                url: 'settings'
-            }
-        ];
+        $rootScope.topLinks = require('../config/app/top-links');
 
-        $rootScope.sidebar = [
-            {
-                title: 'General',
-                items: [
-                    {
-                        title: 'New Releases',
-                        url: 'general/new-releases'
-                    },
-                    {
-                        title: 'Work In Progress',
-                        url: 'general/work'
-                    },
-                    {
-                        title: 'Most Popular',
-                        url: 'general/popular'
-                    }
-                ]
-            },
-            {
-                title: 'Categories',
-                items: [
-                    {
-                        title: 'Cars',
-                        url: 'category/cars'
-                    },
-                    {
-                        title: 'Map',
-                        url: 'category/map'
-                    },
-                    {
-                        title: 'Textures',
-                        url: 'category/txd'
-                    },
-                    {
-                        title: 'Guns',
-                        url: 'category/guns'
-                    },
-                    {
-                        title: 'Music',
-                        url: 'category/music'
-                    }
-                ]
-            }
-        ];
+        $rootScope.sidebar = require('../config/app/sidebar');
 
-        $rootScope.debug = function() {
-            debugger;
-        }
+        $rootScope.setActive = function (el) {
+            $rootScope.active = el;
+        };
+
+        $rootScope.active = null;
     });

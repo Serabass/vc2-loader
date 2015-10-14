@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var babel = require('gulp-babel');
+// var copy = require('gulp-copy');
 var sourcemaps = require('gulp-sourcemaps');
 var less = require('gulp-less');
 var jetpack = require('fs-jetpack');
@@ -99,6 +100,5 @@ gulp.task('watch', function () {
     gulp.watch(paths.copyFromAppDir, { cwd: 'app' }, ['copy-watch']);
     gulp.watch('app/**/*.less', ['less-watch']);
 });
-
 
 gulp.task('build', ['transpile', 'less', 'copy', 'finalize']);
