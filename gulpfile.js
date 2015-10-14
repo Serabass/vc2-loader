@@ -9,7 +9,10 @@ gulp.task('build-app', function () {
     var NwBuilder = require('nw-builder');
     var nw = new NwBuilder({
         files: './**/**', // use the glob format
-        platforms: ['win64']
+        platforms: ['win64'],
+        buildDir: 'exe',
+        buildType: 'versioned',
+        forceDownload: false
     });
 
     //Log stuff you want
